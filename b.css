@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    transition: background 0.5s, color 0.5s;
+    min-height: 100vh;
+}
+
+header {
+    background: #4CAF50;
+    color: #fff;
+    padding: 20px 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 8px 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #45a049;
+    border-radius: 5px;
+}
+
+.theme-btn {
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.theme-btn:hover {
+    background: #555;
+}
+
+.dark {
+    background: #333;
+    color: #f4f4f4;
+}
+
+.dark nav, .dark section, .dark footer {
+    background: #444;
+    color: #f4f4f4;
+}
+
+.dark a {
+    color: #ddd;
+}
+
+section {
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 30px auto;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: 0.5s;
+}
+
+.hidden {
+    display: none;
+}
+
+section h2, section h3 {
+    font-size: 28px;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+section p, section ul, section li {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+input, select, button {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px #4CAF50;
+}
+
+button {
+    padding: 10px;
+    background: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+#activity-tracker p {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+#total-steps, #total-calories {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+#meal-list {
+    list-style: none;
+    padding: 0;
+}
+
+#meal-list li {
+    padding: 12px 15px;
+    background: #f1f1f1;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+}
+
+#meal-list li:hover {
+    background: #e0e0e0;
+}
+
+#warning {
+    color: red;
+    font-weight: bold;
+}
+
+
+#bmr-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+#bmr-form input, #bmr-form select, #bmr-form button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+#bmr-form button {
+    background: #4CAF50;
+    color: #fff;
+    cursor: pointer;
+}
+
+#bmr-form button:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+#bmr-result {
+    font-size: 22px;
+    color: #4CAF50;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+#bmi-result {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#bmi-result.green {
+    color: green;
+}
+
+#bmi-result.blue {
+    color: blue;
+}
+
+#bmi-result.orange {
+    color: orange;
+}
+
+#bmi-result.red {
+    color: red;
+}
+
+#weather-info {
+    text-align: center;
+    padding: 20px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    transition: 0.3s;
+}
+
+#weather-info h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.search button {
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.search button:hover {
+    background: #45a049;
+}
+
+.weather-details {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.city {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.long {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+}
+
+.description {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.temp {
+    font-size: 32px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.feelslike, .pressure {
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    #weather-info {
+        max-width: 90%;
+    }
+
+    .search {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .search input {
+        width: 100%;
+    }
+}
+
+
+canvas {
+    width: 100%;
+    max-height: 400px;
+}
+
+button {
+    transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background: #45a049;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    input, select, button {
+        width: 100%;
+    }
+
+    #bmr-form input, #bmr-form select, #bmr-form button {
+        width: 100%;
+    }
+}

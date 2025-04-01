@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker</title>
+    <link rel="stylesheet" href="b.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <h1>Fitness Tracker</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#activity-tracker">Activity Tracker</a></li>
+                <li><a href="#diet-nutrition">Diet & Nutrition</a></li>
+                <li><a href="#bmi-calculator">BMI Calculator</a></li>
+                <li><a href="#weather-info">Weather Info</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-btn">🌙 Dark Mode</button>
+        </nav>        
+    </div>
+</header>
+
+<main>
+
+    <section id="home" class="section">
+        <h2>Welcome to Your Fitness Tracker</h2>
+        <p>Track your daily activity, diet, and fitness progress easily, you can switch light and dark mode.</p>
+        <p>Enjoy the weather updates to plan your workouts!</p>
+    </section>
+
+    <section id="activity-tracker" class="section hidden">
+        <h2>Activity Tracker</h2>
+        <form id="activity-form">
+            <input type="number" id="steps" placeholder="Steps or KM" required>
+            <select id="unit">
+                <option value="steps">Steps</option>
+                <option value="km">Kilometers</option>
+            </select>
+            <button type="submit">Add Activity</button>
+        </form>
+        <div id="activity-log"></div>
+        <div class="stats">
+            <div class="card">
+                <h2>Total Steps</h2>
+                <p id="total-steps">0</p>
+            </div>
+            <div class="card">
+                <h2>Calories Burned</h2>
+                <p id="total-calories">0 kcal</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="diet-nutrition" class="section hidden">
+        <h2>Diet & Nutrition</h2>
+
+        <h3>Set Your Calorie Goal</h3>
+        <form id="bmr-form">
+            <label for="gender">Gender:</label>
+            <select id="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <input type="number" id="age" placeholder="Age" required>
+            <input type="number" id="weight-bmr" placeholder="Weight (kg)" required>
+            <input type="number" id="height-bmr" placeholder="Height (cm)" required>
+
+            <button type="button" onclick="calculateBMR()">Set Goal</button>
+        </form>
+        <p id="bmr-result"></p>
+
+        <h3>Today's Intake</h3>
+        <form id="meal-form">
+            <input type="text" id="meal-name" placeholder="Meal name" required>
+            <input type="number" id="calories" placeholder="Calories" required>
+            <button type="submit">Add Meal</button>
+        </form>
+
+        <ul id="meal-list"></ul>
+        <h3>Remaining Calories: <span id="remaining-calories"></span></h3>
+        <p id="warning" style="color: red; font-weight: bold;"></p>
+    </section>
+
+    <section id="bmi-calculator" class="section hidden">
+        <h2>BMI Calculator</h2>
+        <form id="bmi-form">
+            <input type="number" id="weight" placeholder="Weight (kg)" required>
+            <input type="number" id="height" placeholder="Height (cm)" required>
+            <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+        </form>
+        <p id="bmi-result">Your BMI will appear here.</p>
+
+        <canvas id="bmi-chart"></canvas>
+    </section>
+
+    <section id="weather-info" class="section hidden">
+        <h2>Weather Info</h2>
+        <div class="search">
+            <input type="text" class="search-bar" placeholder="Enter city">
+            <button>Get Weather</button>
+        </div>
+        <div class="weather-details">
+            <h3 class="city">City Name</h3>
+            <p class="long">(Longitude, Latitude)</p>
+            <img class="icon" src="" alt="Weather icon">
+            <p class="description">Weather description</p>
+            <p class="temp">-- °C</p>
+            <p class="feelslike">Feels like: -- °C</p>
+            <p class="pressure">Pressure: -- pa | Humidity: --% | Wind: -- km/h</p>
+        </div>
+    </section>
+    
+
+    <section class="progress">
+        <h2>Progress Dashboard</h2>
+        <canvas id="progress-chart"></canvas>
+    </section>
+
+</main>
+
+<script src="c.js"></script>
+
+</body>
+</html>
